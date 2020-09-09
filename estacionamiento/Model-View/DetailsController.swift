@@ -29,8 +29,15 @@ class DetailsController: UIViewController, detailsCarProtocol {
 
         self.type.text = setType()
         self.plate.text = car?.plate
-        self.startDate.text = "12 12 12"
+        self.startDate.text = getDateWithFormatter()
+        car?.setAccumulatedTime()
         self.payment.text = "$\(car?.getPayment() ?? 0.0)"
+    }
+    
+    func getDateWithFormatter() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        return formatter.string(from: car?.startDate ?? Date())
     }
     
     func setType() -> String {
