@@ -14,12 +14,13 @@ class carTests: XCTestCase {
     var car: Car = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        let dateTest = formatter.date(from: "2020/09/09 01:23") ?? Date()
+        let dateTest = Date().addingTimeInterval(-60*15)
         
         return Car(id: 1, plate: "ASD12S", type: .resident, accumulatedTime: 0, startDate: dateTest)
     }()
 
     func testAccumulatedTime() {
+        print(car)
         car.setAccumulatedTime()
         XCTAssertEqual(car.accumulatedTime, 15)
     }
@@ -37,5 +38,28 @@ class carTests: XCTestCase {
         carOficial.type = .oficial
         XCTAssertEqual(carOficial.getPayment(), 0)
     }
+
+    func testAppendToCars() {
+        let cars = Cars()
+        cars.appendToCars(car)
+        XCTAssertEqual(cars.cars, [car])
+    }
     
+    func testAppendToCarWithrRepetition() {
+        let cars = Cars()
+        cars.appendToCars(car)
+        cars.appendToCars(car)
+        cars.appendToCars(car)
+        XCTAssertEqual(cars.cars, [car])
+    }
+    
+    func testAppendToCarsNoRepetition() {
+        let cars = Cars()
+        var car2 = car
+        car2.plate = "ASDDQWE"
+        cars.appendToCars(car)
+        cars.appendToCars(car2)
+        XCTAssertEqual(cars.cars, [car, car2])
+    }
+
 }
