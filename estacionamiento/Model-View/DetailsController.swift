@@ -21,8 +21,17 @@ class DetailsController: UIViewController, detailsCarProtocol {
             pay.backgroundColor = UIColor(named: "Buttons")
         }
     }
+    @IBOutlet weak var stopTimer: UIButton! {
+        didSet {
+            stopTimer.titleLabel?.text = "DETENER"
+            stopTimer.layer.cornerRadius = 10
+            stopTimer.backgroundColor = UIColor(named: "Buttons")
+        }
+    }
     
+    var parkingController: ParkingListController?
     var car: Car?
+    let alert = Alert()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,5 +61,31 @@ class DetailsController: UIViewController, detailsCarProtocol {
             case .oficial:
                 return "🚓 No Residente"
         }
+    }
+    
+    @IBAction func payTicketAction(_ button: UIButton) {
+        alertToPay()
+    }
+    
+    func alertToPay() {
+        let alertController = UIAlertController(title: "¿Deseas pagar el ticket?", message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "ACEPTAR", style: .default, handler: { (action) -> Void in
+            self.payTicket()
+        }))
+        alertController.addAction(UIAlertAction(title: "CANCELAR", style: .destructive, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func payTicket() {
+        guard (car != nil) else {
+            alert.showAlertAcept(self)
+            return
+        }
+        self.parkingController?.cars.cars = self.parkingController?.cars.cars?.filter() {$0.plate != car!.plate}
+        self.parkingController?.tableView.reloadData()
+        self.navigationController?.popViewController(animated: true)
+    }
+    deinit {
+        print("clean memory - Details")
     }
 }

@@ -10,21 +10,24 @@ import UIKit
 
 class ParkingListController: UITableViewController {
     
-    var Cars: [Car] = [
-        Car(id: 1, plate: "ASD123Q1", type: .resident, accumulatedTime: 60, startDate: Date()),
-        Car(id: 2, plate: "ZXC345S1", type: .resident, accumulatedTime: 60, startDate: Date()),
-        Car(id: 3, plate: "VRD123B9", type: .noresident, accumulatedTime: 60, startDate: Date()),
-        Car(id: 3, plate: "NEY196V4", type: .noresident, accumulatedTime: 54, startDate: Date()),
-        Car(id: 3, plate: "BTE516H4", type: .oficial, accumulatedTime: 54, startDate: Date()),
-        Car(id: 3, plate: "NTF123B9", type: .oficial, accumulatedTime: 54, startDate: Date())
-    ]
-    
+    var cars = Cars()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cars.appendToCars(Car(id: 1, plate: "ZXC345S1", type: .resident, accumulatedTime: 0, startDate: Date().addingTimeInterval(-60*10)), self)
+        cars.appendToCars(Car(id: 3, plate: "VRD123B9", type: .noresident, accumulatedTime: 0, startDate: Date().addingTimeInterval(-60*100)), self)
+        
         navigationItem.title = "Lista de autos"
          self.clearsSelectionOnViewWillAppear = true
+    }
+    
+    @IBAction func addCarController(_ tabButton: UIBarButtonItem) {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(identifier: "add") as addCarController
+        viewController.parkingListController = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: - Table view data source
@@ -35,12 +38,12 @@ class ParkingListController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return Cars.count
+        return cars.cars?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CarCellID", for: indexPath) as! CarCell
-        cell.setupCarItem(Cars[indexPath.row])
+        cell.setupCarItem(cars.cars![indexPath.row])
         return cell
     }
 
@@ -48,7 +51,8 @@ class ParkingListController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(identifier: "details") as DetailsController
-        viewController.car = Cars[indexPath.row]
+        viewController.parkingController = self
+        viewController.car = cars.cars![indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

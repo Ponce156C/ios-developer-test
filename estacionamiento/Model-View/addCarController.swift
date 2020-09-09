@@ -12,7 +12,14 @@ class addCarController: UIViewController {
     
     @IBOutlet weak var plate: UITextField!
     @IBOutlet weak var type: UISegmentedControl!
-    @IBOutlet weak var add: UIButton!
+    @IBOutlet weak var add: UIButton! {
+        didSet {
+            add.layer.cornerRadius = 10
+        }
+    }
+    
+    var parkingListController: ParkingListController?
+    let alert = Alert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +27,19 @@ class addCarController: UIViewController {
         plate.delegate = self
     }
     
-    @IBAction func addCar(_ segmented: UISegmentedControl) {
+    @IBAction func addCar(_ segmented: UIButton) {
         guard let plateText = plate.text else {
-            showAlert("Ocurrio un problema", "Favor de intentar mas tarde", "ACEPTAR")
+            alert.showAlertAcept(self)
             return
         }
         if plateText.count >= 5  {
-            let car = car
-            Cars().appendToCars(<#T##car: Car##Car#>)
+            let car = Car(id: parkingListController?.cars.getNextID() ?? 1, plate: plateText, type: getTypeSelected(), accumulatedTime: 0, startDate: Date())
+            parkingListController?.cars.appendToCars(car, self)
+            parkingListController?.tableView.reloadData()
+            self.navigationController?.popViewController(animated: true)
             
         }else {
-            showAlert("Datos inválidos", "La cantidad de caracteres tienen que ser mayor a 5", "ACEPTAR")
+            alert.showAlert("Datos inválidos", "La cantidad de caracteres tienen que ser mayor a 5", "ACEPTAR", nil, self)
         }
     }
     
@@ -44,11 +53,8 @@ class addCarController: UIViewController {
             return .oficial
         }
     }
-    
-    func showAlert(_ title: String,_ message: String,_ button: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: button, style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+    deinit {
+        print("clean memory - addCarController")
     }
 }
 
