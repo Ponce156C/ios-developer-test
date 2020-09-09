@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Car {
+struct Car: Equatable {
     
     enum carType {
         case resident
@@ -17,7 +17,7 @@ struct Car {
     }
     
     let id: Int
-    let plate: String
+    var plate: String
     var type: carType
     var accumulatedTime: Int
     var startDate: Date
@@ -38,5 +38,28 @@ struct Car {
         case .oficial:
             return 0.0
         }
+    }
+}
+
+class Cars {
+    
+    var cars: [Car]?
+    
+    func appendToCars(_ car: Car) {
+        if cars != nil {
+            var hasCar = false
+            cars?.forEach({ (carValue) in
+                if carValue.plate == car.plate {
+                    hasCar = true
+                    return
+                }
+            })
+            if !hasCar {
+                cars?.append(car)
+            }
+            return
+        }
+        cars = [car]
+        return
     }
 }
