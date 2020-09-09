@@ -7,9 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CarProtocol {
     var accumulatedTime: Int {get set}
     var startDate: Date {get set}
     mutating func setAccumulatedTime()
+}
+
+protocol detailsCarProtocol {
+    var car: Car? {get set}
 }
