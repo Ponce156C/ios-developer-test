@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A2Q-Hw-RQy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="t3D-De-IWX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A2Q-Hw-RQy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fys-Eg-bcN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Szr-hn-pK9" kind="relationship" relationship="rootViewController" id="zCZ-4B-Z3s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EVQ-vE-d4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+        </scene>
+        <!--Lista-->
+        <scene sceneID="UgU-sP-esj">
+            <objects>
+                <tableViewController id="Szr-hn-pK9" customClass="ParkingListController" customModule="estacionamiento" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V3y-cw-mNC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="search" id="vFk-9e-3Q0">
+                                <rect key="frame" x="0.0" y="28" width="414" height="66.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFk-9e-3Q0" id="RID-6G-DAU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="66.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zsb-rb-nZ1">
+                                            <rect key="frame" x="10" y="5" width="394" height="56.5"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </searchBar>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="zsb-rb-nZ1" firstAttribute="top" secondItem="RID-6G-DAU" secondAttribute="top" constant="5" id="4sR-K2-CXw"/>
+                                        <constraint firstItem="zsb-rb-nZ1" firstAttribute="leading" secondItem="RID-6G-DAU" secondAttribute="leading" constant="10" id="ZNT-2u-xZs"/>
+                                        <constraint firstAttribute="trailing" secondItem="zsb-rb-nZ1" secondAttribute="trailing" constant="10" id="hjY-YQ-2AD"/>
+                                        <constraint firstAttribute="bottom" secondItem="zsb-rb-nZ1" secondAttribute="bottom" constant="5" id="oyU-1x-LZw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CarCellID" preservesSuperviewLayoutMargins="YES" selectionStyle="none" showsReorderControl="YES" indentationWidth="10" reuseIdentifier="CarCellID" focusStyle="custom" id="orj-0O-DxH" customClass="CarCell" customModule="estacionamiento" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94.5" width="414" height="41.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="orj-0O-DxH" id="7bP-va-DkC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iconCar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0N-uL-gXx">
+                                            <rect key="frame" x="20" y="10" width="59" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bt-Ze-4Fv">
+                                            <rect key="frame" x="89" y="10" width="38" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfe-3o-YkN">
+                                            <rect key="frame" x="360" y="10.5" width="34" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="M0N-uL-gXx" firstAttribute="leading" secondItem="7bP-va-DkC" secondAttribute="leading" constant="20" id="1hN-ba-gNr"/>
+                                        <constraint firstItem="Vfe-3o-YkN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2bt-Ze-4Fv" secondAttribute="trailing" constant="20" id="Jrk-VF-tuW"/>
+                                        <constraint firstItem="M0N-uL-gXx" firstAttribute="top" secondItem="7bP-va-DkC" secondAttribute="top" constant="10" id="Qib-iv-PYK"/>
+                                        <constraint firstItem="M0N-uL-gXx" firstAttribute="baseline" secondItem="2bt-Ze-4Fv" secondAttribute="baseline" id="RqO-Tb-xnn"/>
+                                        <constraint firstItem="Vfe-3o-YkN" firstAttribute="centerY" secondItem="2bt-Ze-4Fv" secondAttribute="centerY" id="Xi2-Ox-x3g"/>
+                                        <constraint firstAttribute="bottom" secondItem="M0N-uL-gXx" secondAttribute="bottom" constant="10" id="bMa-JI-3m6"/>
+                                        <constraint firstItem="2bt-Ze-4Fv" firstAttribute="leading" secondItem="M0N-uL-gXx" secondAttribute="trailing" constant="10" id="cYg-b0-OPD"/>
+                                        <constraint firstItem="2bt-Ze-4Fv" firstAttribute="centerY" secondItem="M0N-uL-gXx" secondAttribute="centerY" id="ckz-KI-QEk"/>
+                                        <constraint firstAttribute="trailing" secondItem="Vfe-3o-YkN" secondAttribute="trailing" constant="20" id="k9r-NI-OkI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconCar" destination="M0N-uL-gXx" id="fnO-m8-Tyr"/>
+                                    <outlet property="plate" destination="2bt-Ze-4Fv" id="J73-50-oy3"/>
+                                    <outlet property="timer" destination="Vfe-3o-YkN" id="NAc-mq-bHL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Szr-hn-pK9" id="Ktu-FH-GZL"/>
+                            <outlet property="delegate" destination="Szr-hn-pK9" id="8JF-wr-7e7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista" id="Ann-G4-Q68">
+                        <barButtonItem key="rightBarButtonItem" springLoaded="YES" systemItem="add" id="aa8-2W-6JP"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7A1-fX-z8w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="128.57142857142856"/>
+        </scene>
+        <!--Detalles-->
+        <scene sceneID="EFC-c3-GS4">
+            <objects>
+                <viewController storyboardIdentifier="details" title="Detalles" id="UiK-Ry-QoI" customClass="DetailsController" customModule="estacionamiento" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fUa-y9-ElO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WNP-ad-OgX">
+                                <rect key="frame" x="20" y="86" width="374" height="107"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" restorationIdentifier="type" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YVE-Pw-dHl">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-8e-ckF">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UL-Zr-fQh" userLabel="Tipo de carro:">
+                                                <rect key="frame" x="189.5" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xww-tV-NmP">
+                                        <rect key="frame" x="0.0" y="39" width="374" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placas: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIl-GT-GH3">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whh-C9-u3h" userLabel="Tipo de carro:">
+                                                <rect key="frame" x="189.5" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-v8-6nz">
+                                        <rect key="frame" x="0.0" y="78" width="374" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrada:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83R-ka-wKe">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyO-B7-skX" userLabel="Tipo de carro:">
+                                                <rect key="frame" x="189.5" y="0.0" width="184.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EqQ-hO-nHg">
+                                <rect key="frame" x="113" y="821.5" width="281" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cantidad a pagar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-EH-IMm">
+                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gr0-Se-aUe">
+                                        <rect key="frame" x="145.5" y="0.0" width="135.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WNP-ad-OgX" firstAttribute="leading" secondItem="age-nf-H9v" secondAttribute="leading" constant="20" id="FFG-Nc-rQA"/>
+                            <constraint firstItem="age-nf-H9v" firstAttribute="bottom" secondItem="EqQ-hO-nHg" secondAttribute="bottom" constant="20" id="J1P-Ms-d38"/>
+                            <constraint firstItem="WNP-ad-OgX" firstAttribute="top" secondItem="age-nf-H9v" secondAttribute="top" multiplier="1.5" constant="20" id="PLK-3c-3y0"/>
+                            <constraint firstItem="EqQ-hO-nHg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WNP-ad-OgX" secondAttribute="leading" id="SNp-DN-fpf"/>
+                            <constraint firstItem="EqQ-hO-nHg" firstAttribute="trailing" secondItem="WNP-ad-OgX" secondAttribute="trailing" id="lgb-I1-uG0"/>
+                            <constraint firstItem="age-nf-H9v" firstAttribute="trailing" secondItem="WNP-ad-OgX" secondAttribute="trailing" constant="20" id="s1y-yx-Us9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="age-nf-H9v"/>
+                    </view>
+                    <connections>
+                        <outlet property="payment" destination="gr0-Se-aUe" id="CVM-Tk-iwK"/>
+                        <outlet property="plate" destination="Whh-C9-u3h" id="Khx-EH-Kd1"/>
+                        <outlet property="startDate" destination="yyO-B7-skX" id="kNd-8E-XaZ"/>
+                        <outlet property="type" destination="8UL-Zr-fQh" id="4s4-XZ-Kef"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yiR-iL-kuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1948" y="129"/>
+        </scene>
+    </scenes>
+</document>

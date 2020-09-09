@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752DAAB5250807B8005BA3BA /* carTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752DAAB4250807B8005BA3BA /* carTests.swift */; };
+		752DAAB925081433005BA3BA /* protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752DAAB825081433005BA3BA /* protocols.swift */; };
+		752DAABB25081E44005BA3BA /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752DAABA25081E44005BA3BA /* DetailsController.swift */; };
+		754C58852505703A0073B936 /* car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754C58842505703A0073B936 /* car.swift */; };
 		75EA0E98250463C20073F68C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0E97250463C20073F68C /* AppDelegate.swift */; };
 		75EA0E9A250463C20073F68C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0E99250463C20073F68C /* SceneDelegate.swift */; };
-		75EA0E9C250463C20073F68C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0E9B250463C20073F68C /* ViewController.swift */; };
 		75EA0E9F250463C20073F68C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EA0E9D250463C20073F68C /* Main.storyboard */; };
 		75EA0EA2250463C20073F68C /* estacionamiento.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0EA0250463C20073F68C /* estacionamiento.xcdatamodeld */; };
 		75EA0EA4250463C30073F68C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75EA0EA3250463C30073F68C /* Assets.xcassets */; };
 		75EA0EA7250463C30073F68C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EA0EA5250463C30073F68C /* LaunchScreen.storyboard */; };
 		75EA0EB2250463C30073F68C /* estacionamientoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0EB1250463C30073F68C /* estacionamientoTests.swift */; };
 		75EA0EBD250463C30073F68C /* estacionamientoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0EBC250463C30073F68C /* estacionamientoUITests.swift */; };
+		75EA0ECB2504648A0073F68C /* ParkingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0ECA2504648A0073F68C /* ParkingListController.swift */; };
+		75EA0ECD250468200073F68C /* CarCel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA0ECC250468200073F68C /* CarCel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752DAAB4250807B8005BA3BA /* carTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carTests.swift; sourceTree = "<group>"; };
+		752DAAB825081433005BA3BA /* protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocols.swift; sourceTree = "<group>"; };
+		752DAABA25081E44005BA3BA /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		754C58842505703A0073B936 /* car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = car.swift; sourceTree = "<group>"; };
 		75EA0E94250463C20073F68C /* estacionamiento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = estacionamiento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EA0E97250463C20073F68C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75EA0E99250463C20073F68C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		75EA0E9B250463C20073F68C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75EA0E9E250463C20073F68C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75EA0EA1250463C20073F68C /* estacionamiento.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = estacionamiento.xcdatamodel; sourceTree = "<group>"; };
 		75EA0EA3250463C30073F68C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +59,8 @@
 		75EA0EB8250463C30073F68C /* estacionamientoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = estacionamientoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EA0EBC250463C30073F68C /* estacionamientoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = estacionamientoUITests.swift; sourceTree = "<group>"; };
 		75EA0EBE250463C30073F68C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75EA0ECA2504648A0073F68C /* ParkingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingListController.swift; sourceTree = "<group>"; };
+		75EA0ECC250468200073F68C /* CarCel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		752DAAB625081282005BA3BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				75EA0EA5250463C30073F68C /* LaunchScreen.storyboard */,
+				75EA0E9D250463C20073F68C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		752DAAB725081424005BA3BA /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				752DAAB825081433005BA3BA /* protocols.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		754C5883250570030073B936 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				754C58842505703A0073B936 /* car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		754C58862507E7E90073B936 /* Model-View */ = {
+			isa = PBXGroup;
+			children = (
+				75EA0ECC250468200073F68C /* CarCel.swift */,
+				75EA0ECA2504648A0073F68C /* ParkingListController.swift */,
+				752DAABA25081E44005BA3BA /* DetailsController.swift */,
+			);
+			path = "Model-View";
+			sourceTree = "<group>";
+		};
 		75EA0E8B250463C20073F68C = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +146,13 @@
 		75EA0E96250463C20073F68C /* estacionamiento */ = {
 			isa = PBXGroup;
 			children = (
+				752DAAB725081424005BA3BA /* utilities */,
+				752DAAB625081282005BA3BA /* View */,
+				754C58862507E7E90073B936 /* Model-View */,
+				754C5883250570030073B936 /* Model */,
 				75EA0E97250463C20073F68C /* AppDelegate.swift */,
 				75EA0E99250463C20073F68C /* SceneDelegate.swift */,
-				75EA0E9B250463C20073F68C /* ViewController.swift */,
-				75EA0E9D250463C20073F68C /* Main.storyboard */,
 				75EA0EA3250463C30073F68C /* Assets.xcassets */,
-				75EA0EA5250463C30073F68C /* LaunchScreen.storyboard */,
 				75EA0EA8250463C30073F68C /* Info.plist */,
 				75EA0EA0250463C20073F68C /* estacionamiento.xcdatamodeld */,
 			);
@@ -117,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				75EA0EB1250463C30073F68C /* estacionamientoTests.swift */,
+				752DAAB4250807B8005BA3BA /* carTests.swift */,
 				75EA0EB3250463C30073F68C /* Info.plist */,
 			);
 			path = estacionamientoTests;
@@ -262,10 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EA0E9C250463C20073F68C /* ViewController.swift in Sources */,
 				75EA0E98250463C20073F68C /* AppDelegate.swift in Sources */,
+				752DAAB925081433005BA3BA /* protocols.swift in Sources */,
 				75EA0E9A250463C20073F68C /* SceneDelegate.swift in Sources */,
+				75EA0ECB2504648A0073F68C /* ParkingListController.swift in Sources */,
+				752DAABB25081E44005BA3BA /* DetailsController.swift in Sources */,
 				75EA0EA2250463C20073F68C /* estacionamiento.xcdatamodeld in Sources */,
+				754C58852505703A0073B936 /* car.swift in Sources */,
+				75EA0ECD250468200073F68C /* CarCel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				752DAAB5250807B8005BA3BA /* carTests.swift in Sources */,
 				75EA0EB2250463C30073F68C /* estacionamientoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
