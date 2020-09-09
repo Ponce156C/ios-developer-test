@@ -43,7 +43,7 @@ class CarCell: UITableViewCell {
             iconCar.text = "🚓"
         }
         plate.text = car.plate
-        timer.text = "\(car.accumulatedTime)"
+        timer.text = ""
     }
     
     deinit {
